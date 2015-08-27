@@ -44,8 +44,10 @@ var callFriend = function(){
 */
 
 function makeCounter() {
+  var counter = 0;
   return function() {
-    
+    counter++;
+    console.log(counter);
   }
 };
 
