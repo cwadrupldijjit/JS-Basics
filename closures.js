@@ -51,13 +51,15 @@ function makeCounter() {
   }
 };
 
+/*
+ANSWERED
   //Code Here
   var count = makeCounter();
   count(); // 1
   count(); // 2
   count(); // 3
   count(); // 4
-
+*/
 
 
 //Next Problem
@@ -69,9 +71,25 @@ function makeCounter() {
   (which invokes the original function that was passed in) that can only ever be executed once.
 */
 
-  //Code Here
+function funcRunOnce(funcArg) {
+  var counter = 0;
+  
+  return function() {
+    if (counter === 0) {
+      counter++;
+      funcArg();
+    }
+  };
+}
 
-
+var getNewFunc = funcRunOnce(function() {
+  console.log("Once")
+});
+/*
+getNewFunc();
+getNewFunc();
+getNewFunc();
+*/
 
 //Next Problem
 
@@ -81,7 +99,37 @@ function makeCounter() {
   Now, similar to the last problem, write a function called 'fnCounter' that accepts two parameters. The first parameter will be an anonymous function and the second parameter, 'N', will be a number. Now, in 'fnCounter', allow the anonymous funciton to be invoked 'N' number of times. After it's been invoked 'N' number of times, return 'STOP'.
 */
 
+function fnCounter(funcArg, n) {
+  var counter = 0;
+  return function() {
+    if (counter < n) {
+      counter++;
+      funcArg();
+    }
+  };
+}
 
+var performCount5 = fnCounter(function() {
+  console.log("test");
+}, 5);
+
+// performCount5();
+// performCount5();
+// performCount5();
+// performCount5();
+// performCount5();
+// performCount5();
+// performCount5();
+
+
+var performCount3 = fnCounter(function() {
+  console.log("O_o");
+}, 3);
+// performCount3();
+// performCount3();
+// performCount3();
+// performCount3();
+// performCount3();
 
 //Next Problem
 
