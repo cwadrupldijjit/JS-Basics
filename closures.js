@@ -135,18 +135,23 @@ var performCount3 = fnCounter(function() {
 
 
 
-/*
-  var counter = function(){
-    for (var i=1; i<=5; i++) {
-      setTimeout( function timer(){
-          console.log( i );
-      }, i*1000 );
-    }
-  };
 
+var counter = function(){
+  var j = 1;
+  for (var i=1; i<=5; i++) {
+    setTimeout( function timer(){
+        console.log( j );
+        j++;
+    }, i*1000 );
+  }
+};
+
+counter();
+/*
   Above you have a function named counter. Examine the function (without running the code) then below write what you expect to happen when the funciton is invoked. *Hint: setTimeout calls a function or evaluates an expression after a specified number of milliseconds.
 
     //Answer Here
+    //It will print out 5 five times
 
 
   Now, run the function in your console and note what happpens.
@@ -154,6 +159,7 @@ var performCount3 = fnCounter(function() {
   Was your answer right or wrong?
 
     //Answer Here
+    //Wrong.  It printed out 6 five times.
 
 
   Fix the counter function so that it works the way you expect it to work. (logging 1 then 2 then 3, etc)
