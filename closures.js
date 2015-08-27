@@ -183,14 +183,39 @@ var counter = function(){
 /*
   Make the following code work
 
-  funcArray[0]() //0
-  funcArray[1]() //1
-  funcArray[2]() //2
-  funcArray[3]() //3
-  funcArray[4]() //4
-  funcArray[5]() //5
+  funcArray[0](); //0
+  funcArray[1](); //1
+  funcArray[2](); //2
+  funcArray[3](); //3
+  funcArray[4](); //4
+  funcArray[5](); //5
 
   *Hint: Don't let this fool you. Break down what's really happening here.
 */
 
+var funcArray = [];
 
+function fillArr(n) {
+  var counter = 0;
+  for (var i = 0; i < n; i++) {
+    if (counter < n) {
+      funcArray.push(function() {
+        var x = counter;
+        console.log(x);
+        counter++;
+      });
+    }
+  }
+} 
+
+var fillArr6 = fillArr(6);
+
+// funcArray[0](); //0
+// funcArray[1](); //1
+// funcArray[2](); //2
+// funcArray[3](); //3
+// funcArray[4](); //4
+// funcArray[5](); //5
+
+// //to test it further
+// funcArray[6](); //error
