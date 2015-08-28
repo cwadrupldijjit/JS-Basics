@@ -120,13 +120,13 @@ var performCount5 = fnCounter(function() {
   return "test";
 }, 5);
 
-console.log(performCount5());
-console.log(performCount5());
-console.log(performCount5());
-console.log(performCount5());
-console.log(performCount5());
-console.log(performCount5());
-console.log(performCount5());
+// console.log(performCount5());
+// console.log(performCount5());
+// console.log(performCount5());
+// console.log(performCount5());
+// console.log(performCount5());
+// console.log(performCount5());
+// console.log(performCount5());
 
 
 var performCount3 = fnCounter(function() {
