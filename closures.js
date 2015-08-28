@@ -102,24 +102,31 @@ getNewFunc();
 function fnCounter(funcArg, n) {
   var counter = 0;
   return function() {
-    if (counter < n) {
+    if (counter < n) 
+    {
       counter++;
-      funcArg();
+      return funcArg();
+    }
+    
+    else if (counter === n) 
+    {
+      counter++;
+      return "stop";
     }
   };
 }
 
 var performCount5 = fnCounter(function() {
-  console.log("test");
+  return "test";
 }, 5);
 
-// performCount5();
-// performCount5();
-// performCount5();
-// performCount5();
-// performCount5();
-// performCount5();
-// performCount5();
+console.log(performCount5());
+console.log(performCount5());
+console.log(performCount5());
+console.log(performCount5());
+console.log(performCount5());
+console.log(performCount5());
+console.log(performCount5());
 
 
 var performCount3 = fnCounter(function() {
