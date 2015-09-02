@@ -76,7 +76,7 @@ function funcRunOnce(funcArg) {
   
   return function() {
     if (counter === 0) {
-      counter++;
+      counter++; //explain this
       funcArg();
     }
   };
